@@ -5,12 +5,12 @@ namespace Coolsam\Modules\Commands;
 use Coolsam\Modules\Facades\FilamentModules;
 use Filament\Clusters\Cluster;
 use Filament\Facades\Filament;
-use Filament\Forms\Commands\Concerns\CanGenerateForms;
+use Filament\Forms\Commands\FileGenerators\Concerns\CanGenerateModelForms;
 use Filament\Panel;
 use Filament\Support\Commands\Concerns\CanIndentStrings;
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
 use Filament\Support\Commands\Concerns\CanReadModelSchemas;
-use Filament\Tables\Commands\Concerns\CanGenerateTables;
+use Filament\Tables\Commands\FileGenerators\Concerns\CanGenerateModelTables;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 
@@ -19,8 +19,8 @@ use function Laravel\Prompts\text;
 
 class ModuleMakeFilamentResourceCommand extends Command
 {
-    use CanGenerateForms;
-    use CanGenerateTables;
+    use CanGenerateModelForms;
+    use CanGenerateModelTables;
     use CanIndentStrings;
     use CanManipulateFiles;
     use CanReadModelSchemas;
